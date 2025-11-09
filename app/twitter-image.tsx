@@ -53,7 +53,7 @@ export default function TwitterImage() {
             marginTop: "32px",
           }}
         >
-          Фиксированная цена 30 000 ₽ · Telegram, email и ЮKassa подключены из коробки
+          Фиксированная цена 30 000 руб. · Telegram, email и ЮKassa подключены из коробки
         </p>
       </div>
     ),

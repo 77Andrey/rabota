@@ -19,7 +19,7 @@ export default function OgImage() {
           justifyContent: "space-between",
           position: "relative",
           padding: 72,
-          backgroundColor: "#05050b",
+          backgroundColor: "rgba(5, 5, 11, 1)",
           color: "#F7F7FF",
           overflow: "hidden",
         }}

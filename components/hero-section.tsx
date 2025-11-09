@@ -14,7 +14,7 @@ const heroStats = [
   },
   {
     label: "Фиксированная цена",
-    value: "30 000 ₽",
+    value: "30 000 руб.",
   },
   {
     label: "Лиды конвертируют",
@@ -54,7 +54,7 @@ export function HeroSection() {
           </h1>
           <p className="max-w-xl text-lg text-muted-foreground md:text-xl">
             Под ключ: стратегия, UX/UI, тексты, сборка на Next.js, подключение Telegram и email, настройка аналитики,
-            метрик и онлайн-оплаты. Всё за фиксированные 30 000 ₽.
+            метрик и онлайн-оплаты. Всё за фиксированные 30 000 руб.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">

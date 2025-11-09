@@ -46,7 +46,7 @@ export function MobileFloatingCta() {
       <div className="flex items-center justify-between rounded-3xl bg-card/90 px-4 py-3 shadow-[0_15px_35px_-18px_rgba(61,37,255,0.8)] backdrop-blur">
         <div className="flex flex-col">
           <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Start in 24h</span>
-          <span className="text-sm font-semibold text-foreground">Сайт за 30 000 ₽</span>
+          <span className="text-sm font-semibold text-foreground">Сайт за 30 000 руб.</span>
         </div>
         <Button size="sm" className="rounded-full px-5 text-xs font-semibold" onClick={() => openLeadModal("mobile_cta")}>
           Записаться

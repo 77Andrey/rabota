@@ -72,7 +72,7 @@ export function Header() {
               className="bg-primary text-primary-foreground px-5 py-2 font-semibold shadow shadow-primary/40 transition-transform hover:-translate-y-[1px]"
               onClick={() => openLeadModal("header")}
             >
-              Заказать за 30 000 ₽
+              Заказать за 30 000 руб.
             </Button>
           </div>
 
@@ -108,7 +108,7 @@ export function Header() {
                 openLeadModal("header_mobile")
               }}
             >
-              Заказать за 30 000 ₽
+              Заказать за 30 000 руб.
             </Button>
           </nav>
         </div>

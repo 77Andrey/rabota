@@ -82,7 +82,7 @@ export function PaySection({ provider }: PaySectionProps) {
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">Сумма к оплате</p>
-              <p className="text-3xl font-semibold text-primary">30 000 ₽</p>
+              <p className="text-3xl font-semibold text-primary">30 000 руб.</p>
             </div>
             <div className="text-xs text-muted-foreground">
               <p>В стоимость входит:</p>
@@ -126,7 +126,7 @@ export function PaySection({ provider }: PaySectionProps) {
               Перенаправляем...
             </>
           ) : (
-            "Оплатить 30 000 ₽"
+            "Оплатить 30 000 руб."
           )}
         </Button>
         <p className="text-xs text-muted-foreground">
