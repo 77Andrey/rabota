@@ -6,8 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, ShieldCheck } from "lucide-react"
 import { useLeadModal } from "@/components/lead-modal-provider"
 import { LazySplineViewer } from "@/components/lazy-spline-viewer"
-import type { Lazy3DModelProps } from "@/components/lazy-3d-model"
-import Image from "next/image"
+import { Lazy3DModel } from "@/components/lazy-3d-model"
 
 const heroStats = [
   {
@@ -24,11 +23,7 @@ const heroStats = [
   },
 ]
 
-interface HeroSectionProps {
-  Lazy3D: (props: Lazy3DModelProps) => JSX.Element
-}
-
-export function HeroSection({ Lazy3D }: HeroSectionProps) {
+export function HeroSection() {
   const { openLeadModal } = useLeadModal()
 
   const statItems = useMemo(
@@ -95,21 +90,19 @@ export function HeroSection({ Lazy3D }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-primary/20 via-accent/10 to-transparent blur-3xl" />
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/10 bg-card/60 shadow-[0_25px_60px_-20px_rgba(77,45,255,0.65)]">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent" />
-            <Lazy3D modelUrl="/models/mushroom.glb" className="h-full w-full" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 p-5 text-xs text-white/70 backdrop-blur-sm">
-              <div className="flex items-center gap-2">
-                <Image src="/burra-logo.png" alt="burra.io" width={80} height={24} className="h-5 w-auto" />
-                <span className="font-medium">burra.io — AI-портал</span>
+        <div className="relative hidden lg:block">
+          <div className="absolute -inset-8 rounded-[42px] bg-gradient-to-br from-primary/25 via-accent/15 to-transparent opacity-80 blur-3xl" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] border border-border/50 bg-black/40 shadow-[0_40px_80px_-30px_rgba(77,45,255,0.65)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-transparent opacity-70" />
+            <Lazy3DModel modelUrl="/models/mushroom.glb" className="h-full w-full" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 p-5 text-xs text-white/80 backdrop-blur">
+              <span className="font-medium">AI core — Live render</span>
+                <span>Realtime 3D</span>
               </div>
-              <span>Realtime view</span>
             </div>
           </div>
-        </div>
-        <div className="relative mt-24 overflow-hidden rounded-3xl border border-border/40 bg-black/40 p-6 lg:hidden">
+        ) : null}
+        <div className="relative mt-20 overflow-hidden rounded-3xl border border-border/40 bg-black/40 p-6 lg:hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent opacity-70" />
           <LazySplineViewer
             url="https://prod.spline.design/IxJDS7A3Tb73Pvvr/scene.splinecode"
