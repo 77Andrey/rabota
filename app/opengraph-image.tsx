@@ -40,7 +40,7 @@ export default function OgImage() {
               height: "16px",
               borderRadius: "50%",
               background: "linear-gradient(135deg,#8c4dff,#4d19ff)",
-              display: "inline-block",
+              display: "block",
             }}
           />
           burra.io — AI studio
