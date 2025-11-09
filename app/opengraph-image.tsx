@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og"
+import type { CSSProperties } from "react"
 
 export const size = {
   width: 1200,
@@ -7,22 +8,21 @@ export const size = {
 
 export const contentType = "image/png"
 
-const fontFamily =
-  '"Inter", "Segoe UI", "Helvetica Neue", "Arial", sans-serif'
+const fontFamily = '"Inter", "Arial", "Helvetica Neue", sans-serif'
 
-const headingStyle = {
+const headingStyle: CSSProperties = {
   fontFamily,
   fontWeight: 700,
   margin: 0,
   lineHeight: 1.05,
-} as const
+}
 
-const paragraphStyle = {
+const paragraphStyle: CSSProperties = {
   fontFamily,
   fontWeight: 400,
   margin: 0,
   lineHeight: 1.4,
-} as const
+}
 
 export default function OgImage() {
   return new ImageResponse(
@@ -36,7 +36,7 @@ export default function OgImage() {
           justifyContent: "space-between",
           position: "relative",
           padding: 72,
-          backgroundColor: "rgb(5, 5, 11)",
+          backgroundColor: "#05050b",
           color: "#F7F7FF",
           overflow: "hidden",
         }}
@@ -44,16 +44,25 @@ export default function OgImage() {
         <div
           style={{
             position: "absolute",
-            inset: 0,
-            background: "radial-gradient(circle at 20% 20%, rgba(66, 25, 255, 0.45), transparent 55%)",
+            width: 420,
+            height: 420,
+            borderRadius: 210,
+            backgroundColor: "rgba(104, 71, 255, 0.4)",
+            top: 120,
+            left: 140,
+            opacity: 0.8,
           }}
         />
         <div
           style={{
             position: "absolute",
-            inset: 0,
-            background: "radial-gradient(circle at 80% 10%, rgba(190, 80, 255, 0.35), transparent 60%)",
-            mixBlendMode: "screen",
+            width: 360,
+            height: 360,
+            borderRadius: 180,
+            backgroundColor: "rgba(190, 80, 255, 0.32)",
+            top: 180,
+            right: 160,
+            opacity: 0.7,
           }}
         />
         <div
