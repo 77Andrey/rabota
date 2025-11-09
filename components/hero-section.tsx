@@ -95,13 +95,12 @@ export function HeroSection() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] border border-border/50 bg-black/40 shadow-[0_40px_80px_-30px_rgba(77,45,255,0.65)]">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-transparent opacity-70" />
             <Lazy3DModel modelUrl="/models/mushroom.glb" className="h-full w-full" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 p-5 text-xs text-white/80 backdrop-blur">
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 p-5 text-xs text-white/80 backdrop-blur">
               <span className="font-medium">AI core — Live render</span>
-                <span>Realtime 3D</span>
-              </div>
+              <span>Realtime 3D</span>
             </div>
           </div>
-        ) : null}
+        </div>
         <div className="relative mt-20 overflow-hidden rounded-3xl border border-border/40 bg-black/40 p-6 lg:hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent opacity-70" />
           <LazySplineViewer
