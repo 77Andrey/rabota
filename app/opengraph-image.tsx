@@ -10,6 +10,41 @@ export const contentType = "image/png"
 
 const fontFamily = '"Inter", "Arial", "Helvetica Neue", sans-serif'
 
+const containerStyle: CSSProperties = {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  position: "relative",
+  padding: "72px",
+  backgroundColor: "#05050b",
+  color: "#F7F7FF",
+  overflow: "hidden",
+}
+
+const glowPrimaryStyle: CSSProperties = {
+  position: "absolute",
+  width: "420px",
+  height: "420px",
+  borderRadius: "210px",
+  backgroundColor: "rgba(104, 71, 255, 0.4)",
+  top: "120px",
+  left: "140px",
+  opacity: 0.8,
+}
+
+const glowSecondaryStyle: CSSProperties = {
+  position: "absolute",
+  width: "360px",
+  height: "360px",
+  borderRadius: "180px",
+  backgroundColor: "rgba(190, 80, 255, 0.32)",
+  top: "180px",
+  right: "160px",
+  opacity: 0.7,
+}
+
 const headingStyle: CSSProperties = {
   fontFamily,
   fontWeight: 700,
@@ -24,109 +59,62 @@ const paragraphStyle: CSSProperties = {
   lineHeight: 1.4,
 }
 
+const topBarStyle: CSSProperties = {
+  display: "flex",
+  alignItems: "center",
+  gap: "16px",
+  fontFamily,
+  fontSize: "32px",
+  letterSpacing: "4px",
+  textTransform: "uppercase",
+  color: "rgba(255,255,255,0.72)",
+  position: "relative",
+}
+
+const accentDotStyle: CSSProperties = {
+  width: "16px",
+  height: "16px",
+  borderRadius: "8px",
+  background: "linear-gradient(135deg,#8c4dff,#4d19ff)",
+}
+
+const copyWrapperStyle: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "32px",
+  maxWidth: "880px",
+  position: "relative",
+}
+
+const footerStyle: CSSProperties = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  fontFamily,
+  fontSize: "28px",
+  color: "rgba(255,255,255,0.8)",
+  position: "relative",
+}
+
 export default function OgImage() {
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          position: "relative",
-          padding: 72,
-          backgroundColor: "#05050b",
-          color: "#F7F7FF",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            width: 420,
-            height: 420,
-            borderRadius: 210,
-            backgroundColor: "rgba(104, 71, 255, 0.4)",
-            top: 120,
-            left: 140,
-            opacity: 0.8,
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            width: 360,
-            height: 360,
-            borderRadius: 180,
-            backgroundColor: "rgba(190, 80, 255, 0.32)",
-            top: 180,
-            right: 160,
-            opacity: 0.7,
-          }}
-        />
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-            fontFamily,
-            fontSize: 32,
-            letterSpacing: 4,
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.72)",
-            position: "relative",
-          }}
-        >
-          <div
-            style={{
-              width: 16,
-              height: 16,
-              borderRadius: 8,
-              background: "linear-gradient(135deg,#8c4dff,#4d19ff)",
-            }}
-          />
+      <div style={containerStyle}>
+        <div style={glowPrimaryStyle} />
+        <div style={glowSecondaryStyle} />
+        <div style={topBarStyle}>
+          <div style={accentDotStyle} />
           <span style={{ display: "flex", fontFamily }}>burra.io — AI studio</span>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 32,
-            maxWidth: 880,
-            position: "relative",
-          }}
-        >
-          <p
-            style={{
-              ...headingStyle,
-              fontSize: 88,
-            }}
-          >
+        <div style={copyWrapperStyle}>
+          <p style={{ ...headingStyle, fontSize: "88px" }}>
             AI‑лендинги для российского бизнеса за 24 часа
           </p>
-          <p
-            style={{
-              ...paragraphStyle,
-              fontSize: 28,
-              color: "rgba(255,255,255,0.7)",
-              maxWidth: 700,
-            }}
-          >
+          <p style={{ ...paragraphStyle, fontSize: "28px", color: "rgba(255,255,255,0.7)", maxWidth: "700px" }}>
             Фиксированная стоимость 30 000 RUB · дизайн, тексты, интеграции, метрики и онлайн-оплата
           </p>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontFamily,
-            fontSize: 28,
-            color: "rgba(255,255,255,0.8)",
-            position: "relative",
-          }}
-        >
+        <div style={footerStyle}>
           <span style={{ display: "flex", fontFamily }}>burra.io — Россия</span>
           <span style={{ display: "flex", fontFamily }}>v.2025</span>
         </div>
