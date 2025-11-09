@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, ShieldCheck } from "lucide-react"
 import { useLeadModal } from "@/components/lead-modal-provider"
 import { LazySplineViewer } from "@/components/lazy-spline-viewer"
+import type { Lazy3DModelProps } from "@/components/lazy-3d-model"
+import Image from "next/image"
 
 const heroStats = [
   {
@@ -22,7 +24,11 @@ const heroStats = [
   },
 ]
 
-export function HeroSection() {
+interface HeroSectionProps {
+  Lazy3D: (props: Lazy3DModelProps) => JSX.Element
+}
+
+export function HeroSection({ Lazy3D }: HeroSectionProps) {
   const { openLeadModal } = useLeadModal()
 
   const statItems = useMemo(
@@ -91,17 +97,29 @@ export function HeroSection() {
 
         <div className="relative">
           <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-primary/20 via-accent/10 to-transparent blur-3xl" />
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/5 bg-card/60 shadow-[0_25px_60px_-20px_rgba(77,45,255,0.65)]">
-            <LazySplineViewer
-              url="https://prod.spline.design/IxJDS7A3Tb73Pvvr/scene.splinecode"
-              posterSrc="/hero-poster.webp"
-              posterAlt="AI generated abstract brain visual"
-              className="h-full w-full"
-            />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-between gap-4 p-5 text-xs text-white/70 backdrop-blur-sm">
-              <span>burra.io — AI конструктор</span>
-              <span>Realtime preview</span>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/10 bg-card/60 shadow-[0_25px_60px_-20px_rgba(77,45,255,0.65)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent" />
+            <Lazy3D modelUrl="/models/mushroom.glb" className="h-full w-full" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 p-5 text-xs text-white/70 backdrop-blur-sm">
+              <div className="flex items-center gap-2">
+                <Image src="/burra-logo.png" alt="burra.io" width={80} height={24} className="h-5 w-auto" />
+                <span className="font-medium">burra.io — AI-портал</span>
+              </div>
+              <span>Realtime view</span>
             </div>
+          </div>
+        </div>
+        <div className="relative mt-24 overflow-hidden rounded-3xl border border-border/40 bg-black/40 p-6 lg:hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent opacity-70" />
+          <LazySplineViewer
+            url="https://prod.spline.design/IxJDS7A3Tb73Pvvr/scene.splinecode"
+            posterSrc="/hero-poster.webp"
+            posterAlt="AI generated abstract brain visual"
+            className="relative h-64 w-full overflow-hidden rounded-2xl border border-white/10"
+          />
+          <div className="relative mt-3 flex items-center justify-between text-xs text-white/70">
+            <span>AI-кейсы в движении</span>
+            <span>Клик — открыть</span>
           </div>
         </div>
       </div>

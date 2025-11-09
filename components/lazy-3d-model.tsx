@@ -20,6 +20,11 @@ interface Lazy3DModelProps {
   className?: string
 }
 
+export interface Lazy3DModelProps {
+  modelUrl: string
+  className?: string
+}
+
 export function Lazy3DModel({ modelUrl, className = "" }: Lazy3DModelProps) {
   const [shouldLoad, setShouldLoad] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)

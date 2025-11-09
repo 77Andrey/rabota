@@ -53,7 +53,8 @@ export function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <Image src="/burra-logo.png" alt="burra.io" width={180} height={54} className="h-auto w-44" />
-              <div className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300">
+              <div className="flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-200/90 shadow-[0_0_15px_rgba(16,185,129,0.25)]">
+                <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden />
                 На связи
               </div>
             </div>
