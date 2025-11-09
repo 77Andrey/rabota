@@ -7,6 +7,23 @@ export const size = {
 
 export const contentType = "image/png"
 
+const fontFamily =
+  '"Inter", "Segoe UI", "Helvetica Neue", "Arial", sans-serif'
+
+const headingStyle = {
+  fontFamily,
+  fontWeight: 700,
+  margin: 0,
+  lineHeight: 1.05,
+} as const
+
+const paragraphStyle = {
+  fontFamily,
+  fontWeight: 400,
+  margin: 0,
+  lineHeight: 1.4,
+} as const
+
 export default function OgImage() {
   return new ImageResponse(
     (
@@ -19,7 +36,7 @@ export default function OgImage() {
           justifyContent: "space-between",
           position: "relative",
           padding: 72,
-          backgroundColor: "rgba(5, 5, 11, 1)",
+          backgroundColor: "rgb(5, 5, 11)",
           color: "#F7F7FF",
           overflow: "hidden",
         }}
@@ -44,6 +61,7 @@ export default function OgImage() {
             display: "flex",
             alignItems: "center",
             gap: 16,
+            fontFamily,
             fontSize: 32,
             letterSpacing: 4,
             textTransform: "uppercase",
@@ -59,7 +77,7 @@ export default function OgImage() {
               background: "linear-gradient(135deg,#8c4dff,#4d19ff)",
             }}
           />
-          <span style={{ display: "flex" }}>burra.io — AI studio</span>
+          <span style={{ display: "flex", fontFamily }}>burra.io — AI studio</span>
         </div>
         <div
           style={{
@@ -72,21 +90,18 @@ export default function OgImage() {
         >
           <p
             style={{
+              ...headingStyle,
               fontSize: 88,
-              fontWeight: 700,
-              margin: 0,
-              lineHeight: 1.05,
             }}
           >
             AI‑лендинги для российского бизнеса за 24 часа
           </p>
           <p
             style={{
+              ...paragraphStyle,
               fontSize: 28,
               color: "rgba(255,255,255,0.7)",
-              margin: 0,
               maxWidth: 700,
-              lineHeight: 1.4,
             }}
           >
             Фиксированная стоимость 30 000 RUB · дизайн, тексты, интеграции, метрики и онлайн-оплата
@@ -97,13 +112,14 @@ export default function OgImage() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            fontFamily,
             fontSize: 28,
             color: "rgba(255,255,255,0.8)",
             position: "relative",
           }}
         >
-          <span style={{ display: "flex" }}>burra.io — Россия</span>
-          <span style={{ display: "flex" }}>v.2025</span>
+          <span style={{ display: "flex", fontFamily }}>burra.io — Россия</span>
+          <span style={{ display: "flex", fontFamily }}>v.2025</span>
         </div>
       </div>
     ),
