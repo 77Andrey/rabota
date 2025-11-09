@@ -17,12 +17,28 @@ export default function OgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
+          position: "relative",
           padding: 72,
-          background:
-            "radial-gradient(circle at 20% 20%, rgba(66, 25, 255, 0.65), transparent 55%), radial-gradient(circle at 80% 10%, rgba(190, 80, 255, 0.65), transparent 60%), #05050b",
+          backgroundColor: "#05050b",
           color: "#F7F7FF",
+          overflow: "hidden",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "radial-gradient(circle at 20% 20%, rgba(66, 25, 255, 0.45), transparent 55%)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "radial-gradient(circle at 80% 10%, rgba(190, 80, 255, 0.35), transparent 60%)",
+            mixBlendMode: "screen",
+          }}
+        />
         <div
           style={{
             display: "flex",
@@ -32,6 +48,7 @@ export default function OgImage() {
             letterSpacing: 4,
             textTransform: "uppercase",
             color: "rgba(255,255,255,0.72)",
+            position: "relative",
           }}
         >
           <div
@@ -44,7 +61,15 @@ export default function OgImage() {
           />
           <span style={{ display: "flex" }}>burra.io — AI studio</span>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 32, maxWidth: 880 }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 32,
+            maxWidth: 880,
+            position: "relative",
+          }}
+        >
           <p
             style={{
               fontSize: 88,
@@ -64,7 +89,7 @@ export default function OgImage() {
               lineHeight: 1.4,
             }}
           >
-            Фиксированная стоимость 30 000 ₽ · дизайн, тексты, интеграции, метрики и онлайн-оплата
+            Фиксированная стоимость 30 000 RUB · дизайн, тексты, интеграции, метрики и онлайн-оплата
           </p>
         </div>
         <div
@@ -74,6 +99,7 @@ export default function OgImage() {
             alignItems: "center",
             fontSize: 28,
             color: "rgba(255,255,255,0.8)",
+            position: "relative",
           }}
         >
           <span style={{ display: "flex" }}>burra.io — Россия</span>
